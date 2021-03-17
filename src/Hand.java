@@ -2,13 +2,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * @program: Card
+ * @program: Hand
  * @description:
- * @author: Siyu Hou
+ * @author: Siyu Hou, Kicho Yu
  * @create: 2021-03-16 23:44
  **/
 public class Hand extends Deck{
     private final ArrayList<Card> hand;
+
     public Hand(){
         this.hand = new ArrayList<>(5);
     }

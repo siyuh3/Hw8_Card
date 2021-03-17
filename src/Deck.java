@@ -3,9 +3,9 @@ import java.util.Collection;
 import java.util.Collections;
 
 /**
- * @program: Card
+ * @program: Deck
  * @description:
- * @author: Siyu Hou
+ * @author: Siyu Hou, Kicho Yu
  * @create: 2021-03-16 23:39
  **/
 public class Deck {
