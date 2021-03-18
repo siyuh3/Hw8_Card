@@ -44,8 +44,8 @@ public class Hand extends Deck{
 
     @Override
     public String toString() {
-        for (Card e : hand){
-            System.out.print(e.getSuitAsStr()+ " "+ e.getName() + "\n");
+        for (Card c: hand){
+            System.out.print(c.getNameAsStr()+ " "+ c.getSuitAsStr()+ "\n");
         }
         return null;
     }
@@ -63,19 +63,21 @@ public class Hand extends Deck{
             hand2.addCard(temp2);
         }
 
-
         hand1.sortCard();
         hand2.sortCard();
         deck1.sortCard();
 
-        System.out.println("===Sorted card in hand1===");
+        System.out.println("\n===Sorted card in hand1===");
         hand1.toString();
-        System.out.println("===Sorted card in hand2===");
+        System.out.println("\n===Sorted card in hand2===");
         hand2.toString();
-        System.out.println("===Sorted card in deck1===");
+        System.out.println("\n===Sorted card in deck1===");
         deck1.toString();
-        System.out.println("===Size should be 42===");
+        System.out.println("\n===Size should be 42 (= 52 - 5 - 5)===");
         System.out.println(deck1.getDeck().size());
+
+
+        System.out.println("\n\n===Return the cards===");
 
         for (int i = 0; i < NUMBER_OF_CARDS_IN_HAND; i++){
             Card temp1 = hand1.removeCard();
@@ -84,14 +86,13 @@ public class Hand extends Deck{
             deck1.addCard(temp2);
         }
 
-        System.out.println("===Sorted card in hand1===");
+        System.out.println("\n===Sorted card in hand1 (expecting empty)===");
         hand1.toString();
-        System.out.println("===Sorted card in hand2===");
+        System.out.println("\n===Sorted card in hand2 (expecting empty)===");
         hand2.toString();
-        System.out.println("===Sorted card in deck1===");
+        System.out.println("\n===Sorted card in deck1===");
         deck1.toString();
-        System.out.println("===Size should be 52===");
+        System.out.println("\n===Size should be 52===");
         System.out.println(deck1.getDeck().size());
-
     }
 }
