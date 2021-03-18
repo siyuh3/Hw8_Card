@@ -37,10 +37,10 @@ public class Card {
 
     public String getSuitAsStr(){
         return switch (suit) {
-            case 1 -> "Spades";
-            case 2 -> "Hearts";
-            case 3 -> "Diamonds";
-            case 4 -> "Clubs";
+            case 1 -> "Spade";
+            case 2 -> "Heart";
+            case 3 -> "Diamond";
+            case 4 -> "Club";
             default -> null;
         };
     }
