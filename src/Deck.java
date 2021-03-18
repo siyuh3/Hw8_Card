@@ -40,7 +40,6 @@ public class Deck {
 
     public Card removeCard(){
         return deck.remove(0);
-
     }
 
     public void sortCard(){
@@ -57,7 +56,7 @@ public class Deck {
     @Override
     public String toString() {
         for (Card e : deck){
-            System.out.print(e.getSuitAsStr()+ " "+ e.getName() + "\n");
+            System.out.print(e.getNameAsStr()+ " "+ e.getSuitAsStr() + "\n");
         }
         return null;
     }
