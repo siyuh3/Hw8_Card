@@ -24,6 +24,10 @@ public class Deck {
         return deck;
     }
 
+    /**
+     * Shuffle the cards in the deck.
+     * You can implement this by randomly swapping every card in the deck.
+     */
     public void shuffleCard(){
         int min = 0;
         int max = 51;
@@ -35,14 +39,27 @@ public class Deck {
         }
     }
 
+    /**
+     * Add a new card to the deck.
+     * This method should take a Card object as a parameter and add it to the ArrayList .
+     * @param card Card object
+     */
     public void addCard(Card card){
         deck.add(card);
     }
 
+    /**
+     * Remove a card from the deck.
+     * This removes the first card stored in the ArrayList and returns it.
+     * @return Card object
+     */
     public Card removeCard(){
         return deck.remove(0);
     }
 
+    /**
+     * Sort the cards in the deck ordered by name.
+     */
     public void sortCard(){
         int min;
         for (int i = 0; i < deck.size()-1; i++){
@@ -54,6 +71,10 @@ public class Deck {
         }
     }
 
+    /**
+     * Print every card in the deck.
+     * @return null
+     */
     @Override
     public String toString() {
         for (Card e : deck){
