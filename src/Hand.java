@@ -9,9 +9,10 @@ import java.util.Collections;
  **/
 public class Hand extends Deck{
     private final ArrayList<Card> hand;
+    private static int NUMBER_OF_CARDS_IN_HAND = 5;
 
     public Hand(){
-        this.hand = new ArrayList<>(5);
+        this.hand = new ArrayList<>(NUMBER_OF_CARDS_IN_HAND);
     }
 
     @Override
@@ -76,7 +77,7 @@ public class Hand extends Deck{
         System.out.println("===Size should be 42===");
         System.out.println(deck1.getDeck().size());
 
-        for (int i=0; i<5; i++){
+        for (int i = 0; i < NUMBER_OF_CARDS_IN_HAND; i++){
             Card temp1 = hand1.removeCard();
             deck1.addCard(temp1);
             Card temp2 = hand2.removeCard();
