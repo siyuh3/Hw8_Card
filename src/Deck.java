@@ -44,8 +44,12 @@ public class Deck {
      * This method should take a Card object as a parameter and add it to the ArrayList .
      *
      * @param card Card object
+     * @throws IllegalArgumentException if to add a card that already in the deck
      */
-    public void addCard(Card card) {
+    public void addCard(Card card) throws IllegalArgumentException{
+        if (deck.contains(card)) {
+            throw new IllegalArgumentException("Can't add a card that already existed in the deck");
+        }
         deck.add(card);
     }
 
