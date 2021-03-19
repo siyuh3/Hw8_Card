@@ -12,7 +12,7 @@ public class Deck {
     private final int NUMBER_OF_CARDS = 52;
     private final int NUMBER_OF_SUITS = 4;
     private final int NUMBER_OF_CARDS_IN_A_SUIT = 13;
-    private ArrayList<Card> deck = new ArrayList<>(52);
+    private ArrayList<Card> deck = new ArrayList<>(NUMBER_OF_CARDS);
 
     public Deck() {
         for (int i = 1; i <= NUMBER_OF_SUITS; i++) {
