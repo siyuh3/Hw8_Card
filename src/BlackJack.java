@@ -77,8 +77,6 @@ public class BlackJack extends Deck {
 
     }
 
-
-
     public static void main(String[] args) {
         BlackJack game1 = new BlackJack();
         game1.shuffleCard();
