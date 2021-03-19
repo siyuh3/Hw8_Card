@@ -64,14 +64,15 @@ public class BlackJack extends Deck {
         return null;
     }
 
+
     public Card hit(){
         // made this return a card so the player can see what card he or she added to their score.
         Card cardValue = removeCard(); // card value must translate to an int.
         if(this.player == Player.PLAYER){
-            this.playerScore += cardValue; // <-- this must be an int so we can add a value to the players score.
+            this.playerScore += cardValue.getName();
             return cardValue;
         }
-        this.computerScore += cardValue; // <-- this must be an int so we can add a value to the computer score.
+        this.computerScore += cardValue.getName();
         return cardValue;
 
 
@@ -86,10 +87,12 @@ public class BlackJack extends Deck {
             System.out.println("Hit or Hold");
             String choice = keyboard.nextLine();
             try{
-                if(choice.equals("Hit")) {
-                    game1.hit();
+                if(choice.equals("Hit") || choice.equals("hit")) {
+                    Card playing = game1.hit();
+                    System.out.println(playing.getName() + " of " + playing.getSuit());
+                    System.out.println("player score: " + game1.playerScore);
                 }
-                else if (choice.equals("hold")){
+                else if (choice.equals("hold") || choice.equals("Hold")){
                     break;
                 }
 
@@ -103,8 +106,10 @@ public class BlackJack extends Deck {
         }
 
         game1.nextPlayer();
-        while(game1.computerScore < DEALER_MAX){
-            game1.hit();
+        while(game1.playerScore != 21 && game1.computerScore < DEALER_MAX){
+            Card playing = game1.hit();
+            System.out.println(playing.getName() + " of " + playing.getSuit());
+            System.out.println("computer score: " + game1.computerScore);
         }
 
     }
