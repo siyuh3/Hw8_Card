@@ -3,7 +3,7 @@ import java.util.Collections;
 
 /**
  * @program: Hand
- * @description:
+ * @description: This is a class representing the cards in a hand
  * @author: Siyu Hou, Kicho Yu
  * @create: 2021-03-16 23:44
  **/
