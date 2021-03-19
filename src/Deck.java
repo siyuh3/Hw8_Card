@@ -68,7 +68,7 @@ public class Deck {
     }
 
     /**
-     * Sort the cards in the deck ordered by name.
+     * Sort the cards in the deck ordered by name with selection sort.
      */
     public void sortCard() {
         int min;
