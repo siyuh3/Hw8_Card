@@ -58,8 +58,12 @@ public class Deck {
      * This removes the first card stored in the ArrayList and returns it.
      *
      * @return Card object
+     * @throws IllegalStateException when the deck is empty
      */
-    public Card removeCard() {
+    public Card removeCard() throws IllegalStateException {
+        if (deck.get(0) == null) {
+            throw new IllegalStateException("No more card can be removed from deck");
+        }
         return deck.remove(0);
     }
 
