@@ -1,6 +1,6 @@
 /**
  * @program: Card
- * @description: This class represent the card that stores the
+ * @description: This class represents the card that stores the
  * suit (e.g., Clubs, Diamonds, Hearts, Spades) and its name
  * @author: Siyu Hou
  * @create: 2021-03-16 23:39
