@@ -1,4 +1,5 @@
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 
@@ -41,6 +42,9 @@ public class BlackJack extends Deck {
 //    }
 
 
+    public Player getPlayer() {
+        return player;
+    }
 
     /**
      *
@@ -78,6 +82,13 @@ public class BlackJack extends Deck {
 
     }
 
+    /*
+    13 of 4 = king of clubs.
+    Working on a way to better display the cards.
+    Cards need to have a value and not use the value in the switch statement int the card class.
+    Suits need to have a suit name and ot use the value in the switch statement in the card class.
+    working on "bust"
+     */
     public static void main(String[] args) {
         BlackJack game1 = new BlackJack();
         game1.shuffleCard();
@@ -86,6 +97,7 @@ public class BlackJack extends Deck {
         {
             System.out.println("Hit or Hold");
             String choice = keyboard.nextLine();
+            System.out.println("\n");
             try{
                 if(choice.equals("Hit") || choice.equals("hit")) {
                     Card playing = game1.hit();
@@ -95,21 +107,59 @@ public class BlackJack extends Deck {
                 else if (choice.equals("hold") || choice.equals("Hold")){
                     break;
                 }
-
             }
             catch(Exception e){
                 System.out.println("Not a valid input.");
             }
         }
-        if(game1.playerScore == 21){
-            System.out.println("Player 1 wins!"); // dealer max is 17 so player will always win if he or she gets 21
+        if(game1.playerScore > 21){
+            System.out.println("\n****Bust!****\n");
         }
 
+        /*
+        It's now the dealers turn.
+         */
         game1.nextPlayer();
-        while(game1.playerScore != 21 && game1.computerScore < DEALER_MAX){
+        System.out.println("\nIt's now the " + game1.getPlayer() + " turn");
+        while(game1.computerScore < DEALER_MAX){
             Card playing = game1.hit();
             System.out.println(playing.getName() + " of " + playing.getSuit());
             System.out.println("computer score: " + game1.computerScore);
+        }
+        if(game1.computerScore > WINNING_SCORE){
+            System.out.println("\n****Bust!****\n");
+
+        /*
+        Winning logic for player:
+        Player must have a score <= WINNING_SCORE && Computer > WINNING SCORE
+        or
+        Player's score > Computer's score
+        tie occurs when both player and dealer values are the same and less than 21
+         */
+        }
+        // when both players have the same score and are less than 21 -- tie.
+        if(game1.playerScore == game1.computerScore &&
+                game1.computerScore < WINNING_SCORE && game1.playerScore < WINNING_SCORE)
+        {
+            System.out.println("\npush -- no one wins.");
+        }
+        // when computer busts and player is less than or equal to 21. Player wins.
+        if(game1.computerScore > WINNING_SCORE && game1.playerScore <= WINNING_SCORE)
+        {
+            System.out.println("Player wins!!");
+        }
+        // both players are less than 21 and player is greater than computer -- Player wins.
+        else if(game1.computerScore < WINNING_SCORE && game1.playerScore <= WINNING_SCORE &&
+                game1.computerScore < game1.playerScore){
+            System.out.println("\n***Player wins!!***");
+        }
+        // if both players go over 21.
+        else if(game1.playerScore > WINNING_SCORE && game1.computerScore > WINNING_SCORE){
+            System.out.println("\n No one wins.");
+        }
+        // otherwise computer wins.
+        else{
+            System.out.println("\n***Computer wins ***");
         }
 
     }
