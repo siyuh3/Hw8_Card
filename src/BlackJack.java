@@ -1,5 +1,4 @@
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 
@@ -8,7 +7,7 @@ import java.util.Scanner;
 2 players: computer vs human.
 methods:
 hit -- add a card to sum
-stand --
+stand -- stop
  */
 
 public class BlackJack extends Deck {
