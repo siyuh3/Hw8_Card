@@ -98,12 +98,12 @@ public class BlackJack extends Deck {
             String choice = keyboard.nextLine();
             System.out.println("\n");
             try{
-                if(choice.equals("Hit") || choice.equals("hit")) {
+                if(choice.equalsIgnoreCase("hit")) {
                     Card playing = game1.hit();
                     System.out.println(playing.getName() + " of " + playing.getSuit());
                     System.out.println("player score: " + game1.playerScore);
                 }
-                else if (choice.equals("hold") || choice.equals("Hold")){
+                else if (choice.equalsIgnoreCase("hold")){
                     break;
                 }
             }
