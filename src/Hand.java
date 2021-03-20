@@ -3,7 +3,7 @@ import java.util.Collections;
 
 /**
  * @program: Hand
- * @description:
+ * @description: This is a class representing the cards in a hand
  * @author: Siyu Hou, Kicho Yu
  * @create: 2021-03-16 23:44
  **/
@@ -11,15 +11,25 @@ public class Hand extends Deck{
     private final ArrayList<Card> hand;
     private static int NUMBER_OF_CARDS_IN_HAND = 5;
 
+    /**
+     * Default constructor that initializes a hand of empty set of cards
+     */
     public Hand(){
         this.hand = new ArrayList<>(NUMBER_OF_CARDS_IN_HAND);
     }
 
+    /**
+     * Shuffles the cards in a hand
+     */
     @Override
     public void shuffleCard() {
         super.shuffleCard();
     }
 
+    /**
+     * a
+     * @param card Card object
+     */
     @Override
     public void addCard(Card card) {
         hand.add(card);

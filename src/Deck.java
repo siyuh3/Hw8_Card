@@ -4,7 +4,7 @@ import java.util.Collections;
 
 /**
  * @program: Deck
- * @description:
+ * @description: This class represent the deck that consists of 52 cards
  * @author: Siyu Hou, Kicho Yu
  * @create: 2021-03-16 23:39
  **/
@@ -14,6 +14,9 @@ public class Deck {
     private final int NUMBER_OF_CARDS_IN_A_SUIT = 13;
     private ArrayList<Card> deck = new ArrayList<>(NUMBER_OF_CARDS);
 
+    /**
+     * Default constructor that creates a deck of 52 cards by the order of their names
+     */
     public Deck() {
         for (int i = 1; i <= NUMBER_OF_SUITS; i++) {
             for (int j = 1; j <= NUMBER_OF_CARDS_IN_A_SUIT; j++) {
@@ -23,12 +26,16 @@ public class Deck {
         }
     }
 
+    /**
+     * Getter that returns the ArrayList of the deck
+     * @return the ArrayList of the deck
+     */
     public ArrayList<Card> getDeck() {
         return deck;
     }
 
     /**
-     * Shuffle the cards in the deck.
+     * Shuffles the cards in the deck.
      * You can implement this by randomly swapping every card in the deck.
      */
     public void shuffleCard() {
@@ -68,7 +75,7 @@ public class Deck {
     }
 
     /**
-     * Sort the cards in the deck ordered by name with selection sort.
+     * Sorts the cards in the deck ordered by name with selection sort.
      */
     public void sortCard() {
         int min;
@@ -82,7 +89,7 @@ public class Deck {
     }
 
     /**
-     * Print every card in the deck.
+     * Prints every card in the deck.
      *
      * @return null
      */
@@ -100,7 +107,7 @@ public class Deck {
         deck1.toString();
 
         deck1.sortCard();
-        System.out.println("=========After sorted=============");
+        System.out.println("=========After being sorted=============");
         deck1.toString();
     }
 }
