@@ -22,6 +22,7 @@ public class BlackJack extends Deck {
     private int computerScore;
     private static final int WINNING_SCORE = 21;
     private static final int DEALER_MAX = 17;
+    private static final int CARDS_IN_HAND_IN_THE_BEGINNING = 2;
 
     /**
      * Default constructor.
