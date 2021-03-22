@@ -9,7 +9,7 @@ import java.util.Collections;
  **/
 public class Hand extends Deck{
     private final ArrayList<Card> hand;
-    private static int NUMBER_OF_CARDS_IN_HAND = 5;
+    private static final int NUMBER_OF_CARDS_IN_HAND = 5;
 
     /**
      * Default constructor that initializes a hand of empty set of cards
@@ -55,9 +55,8 @@ public class Hand extends Deck{
 
     @Override
     public void sortCard() {
-        int min;
         for (int i = 0; i < hand.size()-1; i++){
-            min = i;
+            int min = i;
             for (int j = i+1; j < hand.size(); j++){
                 if (hand.get(j).getName() < hand.get(min).getName()) min = j;
             }
