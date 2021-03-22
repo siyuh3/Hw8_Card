@@ -74,15 +74,24 @@ public class BlackJack extends Deck {
 
     public Card hit() {
         // made this return a card so the player can see what card he or she added to their score.
-        Card cardValue = removeCard(); // card value must translate to an int.
+        Card newCard = removeCard(); // card value must translate to an int.
         if (this.player == Player.PLAYER) {
-            this.playerScore += cardValue.getName();
-            return cardValue;
+            this.playerScore += convertCardToValue(newCard);
+            return newCard;
         }
-        this.computerScore += cardValue.getName();
-        return cardValue;
+        this.computerScore += convertCardToValue(newCard);
+        return newCard;
+    }
 
-
+    private int convertCardToValue(Card c) {
+        int literalValue = c.getName();
+        if (literalValue == 1) {
+            // To be completed: Ace can be one or eleven, whichever makes a better hand
+            return 0;
+        }
+        if (literalValue >= 10) {
+            return 10;
+        }
     }
 
     /*
