@@ -4,7 +4,7 @@ import java.util.Scanner;
 /**
  * @program: BlackJack
  * @description: This class represents the BlackJake game play
- * @author: Siyu Hou
+ * @author: Siyu Hou, Kicho Yu
  * @create: 2021-03-20 23:39
  **/
 
@@ -87,7 +87,7 @@ public class BlackJack extends Deck {
     private int convertCardToValue(Card c) {
         int literalValue = c.getName();
         if (literalValue == 1) {
-            // will be adjusted in the isBust method
+            // will be adjusted in the isBusted method
             return 11;
         } else if (literalValue > 10) {
             return 10;
@@ -131,6 +131,8 @@ public class BlackJack extends Deck {
     public static void main(String[] args) {
         BlackJack game1 = new BlackJack();
         game1.shuffleCard();
+//        Deck deck1 = new Deck();
+//        deck1.shuffleCard();
         Scanner keyboard = new Scanner(System.in);
         while (game1.playerScore < WINNING_SCORE) {
             System.out.println("Hit or Stand");
