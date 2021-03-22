@@ -103,7 +103,7 @@ public class BlackJack extends Deck {
             try {
                 if (choice.equalsIgnoreCase("hit")) {
                     Card playing = game1.hit();
-                    System.out.println(playing.getName() + " of " + playing.getSuit());
+                    System.out.println(playing.getNameAsStr() + " of " + playing.getSuitAsStr());
                     System.out.println("player score: " + game1.playerScore);
                 } else if (choice.equalsIgnoreCase("hold")) {
                     break;
@@ -123,7 +123,7 @@ public class BlackJack extends Deck {
         System.out.println("\nIt's now the " + game1.getPlayer() + " turn");
         while (game1.computerScore < DEALER_MAX) {
             Card playing = game1.hit();
-            System.out.println(playing.getName() + " of " + playing.getSuit());
+            System.out.println(playing.getNameAsStr() + " of " + playing.getSuitAsStr());
             System.out.println("computer score: " + game1.computerScore);
         }
         if (game1.computerScore > WINNING_SCORE) {
