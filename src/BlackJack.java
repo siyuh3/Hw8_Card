@@ -86,15 +86,27 @@ public class BlackJack extends Deck {
     private int convertCardToValue(Card c) {
         int literalValue = c.getName();
         if (literalValue == 1) {
-            // To be completed: Ace can be one or eleven, whichever makes a better hand
-            return 0;
+            // will be adjusted in the isBust method
+            return 11;
         } else if (literalValue > 10) {
             return 10;
         } else {
             return literalValue;
         }
-
     }
+
+    private static boolean isBust(Hand handOfEitherOne) {
+        for (cards: Hand) {
+            if (score > WINNING_SCORE) {
+                // We need to adjust the value of Ace
+                if (Hand.contain(Ace)) {
+                    score-= 10;
+
+                }
+            }
+        }
+    }
+
 
     /*
     13 of 4 = king of clubs.
