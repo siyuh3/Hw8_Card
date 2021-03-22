@@ -100,7 +100,7 @@ public class BlackJack extends Deck {
         game1.shuffleCard();
         Scanner keyboard = new Scanner(System.in);
         while (game1.playerScore < WINNING_SCORE) {
-            System.out.println("Hit or Hold");
+            System.out.println("Hit or Stand");
             String choice = keyboard.nextLine();
             System.out.println("\n");
             try {
@@ -108,7 +108,7 @@ public class BlackJack extends Deck {
                     Card playing = game1.hit();
                     System.out.println(playing.getNameAsStr() + " of " + playing.getSuitAsStr());
                     System.out.println("player score: " + game1.playerScore);
-                } else if (choice.equalsIgnoreCase("hold")) {
+                } else if (choice.equalsIgnoreCase("stand")) {
                     break;
                 }
             } catch (Exception e) {
