@@ -27,16 +27,29 @@ public class Hand extends Deck{
     }
 
     /**
-     * a
+     * Add a new card to the hand
+     * This method should take a Card object as a parameter and add it to the ArrayList of Hand .
      * @param card Card object
+     * Note: In the Deck class, we make sure there will be no duplicate in a deck. Therefore,
+     *       there won't be any duplicate in the hand whose cards are derived from the deck
      */
     @Override
     public void addCard(Card card) {
         hand.add(card);
     }
 
+    /**
+     * Remove a card from the hand
+     * This removes the first card stored in the ArrayList of the Hand and returns it
+     *
+     * @return Card object got removed
+     * @throws IllegalStateException when the hand is empty
+     */
     @Override
     public Card removeCard() {
+        if (hand.get(0) == null) {
+            throw new IllegalStateException("No more card can be removed from hand");
+        }
         return hand.remove(0);
     }
 
