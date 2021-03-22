@@ -88,10 +88,12 @@ public class BlackJack extends Deck {
         if (literalValue == 1) {
             // To be completed: Ace can be one or eleven, whichever makes a better hand
             return 0;
-        }
-        if (literalValue >= 10) {
+        } else if (literalValue > 10) {
             return 10;
+        } else {
+            return literalValue;
         }
+
     }
 
     /*
