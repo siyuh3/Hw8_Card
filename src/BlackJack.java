@@ -159,9 +159,10 @@ public class BlackJack extends Deck {
         }
 
         // otherwise computer wins.
-        /* Kicho: When both players go over 21, then that is actually when a dealer wins.
-           Here is a rule: If you go over 21 you bust, and the dealer wins regardless of the dealer's hand.
-           This rule actually gives an advantage to casino.
+        /* Kicho
+          When both players go over 21, then that is actually when a dealer wins.
+          Here is a rule: If you go over 21 you bust, and the dealer wins regardless of the dealer's hand.
+          This rule actually gives an advantage to casino.
         */
         else {
             System.out.println("\n***Computer wins ***");
