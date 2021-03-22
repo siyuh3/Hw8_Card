@@ -53,6 +53,9 @@ public class Hand extends Deck{
         return hand.remove(0);
     }
 
+    /**
+     * Sort the cards of the hand using selection sort
+     */
     @Override
     public void sortCard() {
         for (int i = 0; i < hand.size()-1; i++){
@@ -64,6 +67,10 @@ public class Hand extends Deck{
         }
     }
 
+    /**
+     * Print all cards of a hand in strings
+     * @return
+     */
     @Override
     public String toString() {
         for (Card c: hand){
