@@ -96,18 +96,19 @@ public class BlackJack extends Deck {
     }
 
     /*
+    // What parameter do we need? Hand? Player?
     // score should be fixed
     // Then we can use this method.
     private static boolean isBusted(Hand handOfEitherOne) {
-        for (cards: Hand) {
-            if (score > WINNING_SCORE) {
-                // We need to adjust the value of Ace
-                if (Hand.contain(Ace)) {
-                    score-= 10;
-
-                }
+        if (score > WINNING_SCORE) {
+            // We need to adjust the value of Ace
+            if (Hand.contains(Ace)) {
+                score -= 10;
+                return false;
             }
+            return true;
         }
+        return true;
     }
      */
 
