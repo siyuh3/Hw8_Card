@@ -95,7 +95,10 @@ public class BlackJack extends Deck {
         }
     }
 
-    private static boolean isBust(Hand handOfEitherOne) {
+    /*
+    // score should be fixed
+    // Then we can use this method.
+    private static boolean isBusted(Hand handOfEitherOne) {
         for (cards: Hand) {
             if (score > WINNING_SCORE) {
                 // We need to adjust the value of Ace
@@ -106,6 +109,7 @@ public class BlackJack extends Deck {
             }
         }
     }
+     */
 
 
     /*
@@ -119,6 +123,7 @@ public class BlackJack extends Deck {
     1. We need to implement the ace case. Aces are worth 1 or 11, whichever makes a better hand.
     2. We need to show 2 cards of a player when the game starts, not 1.
     3. We need to show 1 card of a DEALER when the game starts. Then PLAYER starts the game as #2 says.
+    4. Shuwei's idea: We need to use hand.java.
 
      */
     public static void main(String[] args) {
