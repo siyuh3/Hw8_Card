@@ -112,7 +112,7 @@ public class BlackJack extends Deck {
                 System.out.println("Not a valid input.");
             }
         }
-        if (game1.playerScore > 21) {
+        if (game1.playerScore > WINNING_SCORE) {
             System.out.println("\n****Bust!****\n");
         }
 
