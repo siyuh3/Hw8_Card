@@ -91,6 +91,9 @@ public class BlackJack extends Deck {
     Cards need to have a value and not use the value in the switch statement int the card class.
     Suits need to have a suit name and ot use the value in the switch statement in the card class.
     working on "bust"
+
+    Kicho: We need to implement the ace case.
+    Aces are worth 1 or 11, whichever makes a better hand.
      */
     public static void main(String[] args) {
         BlackJack game1 = new BlackJack();
