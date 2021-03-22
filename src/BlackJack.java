@@ -137,26 +137,27 @@ public class BlackJack extends Deck {
         tie occurs when both player and dealer values are the same and less than 21
          */
         }
-        // when both players have the same score and are less than 21 -- tie.
+        // when both players have the same score and are less than or equal to 21 -- tie.
         if (game1.playerScore == game1.computerScore &&
-                game1.computerScore < WINNING_SCORE && game1.playerScore < WINNING_SCORE) {
-            System.out.println("\npush -- no one wins.");
+                game1.computerScore <= WINNING_SCORE && game1.playerScore <= WINNING_SCORE) {
+            // Why is it called "push"? Is it a typo?
+            System.out.println("\n***push -- no one wins.***");
         }
         // when computer busts and player is less than or equal to 21. Player wins.
         if (game1.computerScore > WINNING_SCORE && game1.playerScore <= WINNING_SCORE) {
-            System.out.println("Player wins!!");
+            System.out.println("\n***Player wins!!***");
         }
-        // both players are less than 21 and player is greater than computer -- Player wins.
-
-        else if (game1.computerScore < WINNING_SCORE && game1.playerScore <= WINNING_SCORE &&
+        // both players are less than or equal to 21 and player is greater than computer -- Player wins.
+        else if (game1.computerScore <= WINNING_SCORE && game1.playerScore <= WINNING_SCORE &&
                 game1.computerScore < game1.playerScore) {
             System.out.println("\n***Player wins!!***");
         }
-        // if both players go over 21.
-        else if (game1.playerScore > WINNING_SCORE && game1.computerScore > WINNING_SCORE) {
-            System.out.println("\n No one wins.");
-        }
+
         // otherwise computer wins.
+        /* Kicho: When both players go over 21, then that is actually when a dealer wins.
+           Here is a rule: If you go over 21 you bust, and the dealer wins regardless of the dealer's hand.
+           This rule actually gives an advantage to casino.
+        */
         else {
             System.out.println("\n***Computer wins ***");
         }
