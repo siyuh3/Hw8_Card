@@ -16,10 +16,10 @@ public class Deck {
      * Default constructor that creates a deck of 52 cards by the order of their names
      */
     public Deck() {
-        int NUMBER_OF_SUITS = 4;
-        for (int i = 1; i <= NUMBER_OF_SUITS; i++) {
-            int NUMBER_OF_CARDS_IN_A_SUIT = 13;
-            for (int j = 1; j <= NUMBER_OF_CARDS_IN_A_SUIT; j++) {
+        int numberOfSuits = 4;
+        for (int i = 1; i <= numberOfSuits; i++) {
+            int numberOfCardsInASuit = 13;
+            for (int j = 1; j <= numberOfCardsInASuit; j++) {
                 Card newCard = new Card(i, j);
                 deck.add(newCard);
             }

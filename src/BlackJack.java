@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-
 /**
  * @program: BlackJack
  * @description: This class represents the BlackJake game play
@@ -21,7 +18,6 @@ public class BlackJack {
         this.player = Player.PLAYER;
         setPlayerScore(0);
         setComputerScore(0);
-
     }
 
     /**
@@ -30,7 +26,7 @@ public class BlackJack {
      * @return current player
      */
     public Player getPlayer() {
-        return player;
+        return this.player;
     }
 
     /**
