@@ -9,33 +9,33 @@ public class Card {
     private int suit;
     private int name;
 
-    private final int NUMBER_OF_SUITS = 4;
-    private final int NUMBER_OF_CARDS_IN_A_SUIT = 13;
-
     /**
      * Default constructor that creates a card of Spade Ace
      */
-    public Card(){
+    public Card() {
         setSuit(1);
         setName(1);
     }
 
     /**
      * Constructor that creates a card of a given suit and a given name
+     *
      * @param suit the suit of a card
      * @param name the name of a card
      */
-    public Card(int suit, int name){
+    public Card(int suit, int name) {
         setSuit(suit);
         setName(name);
     }
 
     /**
      * Setter that sets the suit of a card
+     *
      * @param suit the suit of a card
      * @throws IndexOutOfBoundsException if suit is out of the range of [1,4]
      */
     public void setSuit(int suit) throws IndexOutOfBoundsException {
+        int NUMBER_OF_SUITS = 4;
         if (suit < 1 || suit > NUMBER_OF_SUITS) {
             throw new IndexOutOfBoundsException("Invalid suit");
         }
@@ -44,10 +44,12 @@ public class Card {
 
     /**
      * Setter that sets the name of a card
+     *
      * @param name the name of a card
      * @throws IndexOutOfBoundsException if name is out of the range of [1,13]
      */
     public void setName(int name) throws IndexOutOfBoundsException {
+        int NUMBER_OF_CARDS_IN_A_SUIT = 13;
         if (name < 1 || name > NUMBER_OF_CARDS_IN_A_SUIT) {
             throw new IndexOutOfBoundsException("Invalid name");
         }
@@ -56,6 +58,7 @@ public class Card {
 
     /**
      * Getter that gets the suit of the card
+     *
      * @return the suit of the card
      */
     public int getSuit() {
@@ -64,6 +67,7 @@ public class Card {
 
     /**
      * Getter that gets the name of the card
+     *
      * @return the name of the card
      */
     public int getName() {
@@ -72,9 +76,10 @@ public class Card {
 
     /**
      * Getter that gets the string of the suit of the card
+     *
      * @return the string of the suit of the card
      */
-    public String getSuitAsStr(){
+    public String getSuitAsStr() {
         return switch (suit) {
             case 1 -> "Spade";
             case 2 -> "Heart";
@@ -86,9 +91,10 @@ public class Card {
 
     /**
      * Getter that gets the string of the name of the card
+     *
      * @return the string of the name of the card
      */
-    public String getNameAsStr(){
+    public String getNameAsStr() {
         return switch (name) {
             case 1 -> "Ace";
             case 2 -> "2";

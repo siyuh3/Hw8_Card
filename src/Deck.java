@@ -28,6 +28,7 @@ public class Deck {
 
     /**
      * Getter that returns the ArrayList of the deck
+     *
      * @return the ArrayList of the deck
      */
     public ArrayList<Card> getDeck() {
@@ -53,7 +54,7 @@ public class Deck {
      * @param card Card object
      * @throws IllegalArgumentException if to add a card that already in the deck
      */
-    public void addCard(Card card) throws IllegalArgumentException{
+    public void addCard(Card card) throws IllegalArgumentException {
         if (deck.contains(card)) {
             throw new IllegalArgumentException("Can't add a card that already existed in the deck");
         }
@@ -99,15 +100,5 @@ public class Deck {
             System.out.print(c.getNameAsStr() + " " + c.getSuitAsStr() + "\n");
         }
         return null;
-    }
-
-    public static void main(String[] args) {
-        Deck deck1 = new Deck();
-        deck1.shuffleCard();
-        deck1.toString();
-
-        deck1.sortCard();
-        System.out.println("=========After being sorted=============");
-        deck1.toString();
     }
 }

@@ -7,15 +7,19 @@ import java.util.Collections;
  * @author: Siyu Hou, Kicho Yu
  * @create: 2021-03-16 23:44
  **/
-public class Hand extends Deck{
+public class Hand extends Deck {
     private final ArrayList<Card> hand;
     private static final int NUMBER_OF_CARDS_IN_HAND = 5;
 
     /**
      * Default constructor that initializes a hand of empty set of cards
      */
-    public Hand(){
-        this.hand = new ArrayList<>(NUMBER_OF_CARDS_IN_HAND);
+    public Hand() {
+        this.hand = new ArrayList<Card>(NUMBER_OF_CARDS_IN_HAND);
+    }
+
+    public Hand(ArrayList<Card> hand){
+        this.hand = new ArrayList<Card>();
     }
 
     /**
@@ -29,9 +33,10 @@ public class Hand extends Deck{
     /**
      * Add a new card to the hand
      * This method should take a Card object as a parameter and add it to the ArrayList of Hand .
+     *
      * @param card Card object
-     * Note: In the Deck class, we make sure there will be no duplicate in a deck. Therefore,
-     *       there won't be any duplicate in the hand whose cards are derived from the deck
+     *             Note: In the Deck class, we make sure there will be no duplicate in a deck. Therefore,
+     *             there won't be any duplicate in the hand whose cards are derived from the deck
      */
     @Override
     public void addCard(Card card) {
@@ -58,9 +63,9 @@ public class Hand extends Deck{
      */
     @Override
     public void sortCard() {
-        for (int i = 0; i < hand.size()-1; i++){
+        for (int i = 0; i < hand.size() - 1; i++) {
             int min = i;
-            for (int j = i+1; j < hand.size(); j++){
+            for (int j = i + 1; j < hand.size(); j++) {
                 if (hand.get(j).getName() < hand.get(min).getName()) min = j;
             }
             Collections.swap(hand, i, min);
@@ -69,12 +74,13 @@ public class Hand extends Deck{
 
     /**
      * Print all cards of a hand in strings
-     * @return
+     *
+     * @return null
      */
     @Override
     public String toString() {
-        for (Card c: hand){
-            System.out.print(c.getNameAsStr()+ " "+ c.getSuitAsStr()+ "\n");
+        for (Card c : hand) {
+            System.out.print(c.getNameAsStr() + " " + c.getSuitAsStr() + "\n");
         }
         return null;
     }
@@ -85,7 +91,7 @@ public class Hand extends Deck{
         Hand hand1 = new Hand();
         Hand hand2 = new Hand();
 
-        for (int i=0; i<5; i++){
+        for (int i = 0; i < 5; i++) {
             Card temp1 = deck1.removeCard();
             hand1.addCard(temp1);
             Card temp2 = deck1.removeCard();
@@ -108,7 +114,7 @@ public class Hand extends Deck{
 
         System.out.println("\n\n===Return the cards===");
 
-        for (int i = 0; i < NUMBER_OF_CARDS_IN_HAND; i++){
+        for (int i = 0; i < NUMBER_OF_CARDS_IN_HAND; i++) {
             Card temp1 = hand1.removeCard();
             deck1.addCard(temp1);
             Card temp2 = hand2.removeCard();
