@@ -4,7 +4,7 @@ import java.util.Scanner;
 /**
  * @program: Card
  * @description:
- * @author: Siyu Hou
+ * @author: Siyu Hou, Kicho Yu
  * @create: 2021-03-23 02:54
  **/
 
@@ -39,11 +39,11 @@ import java.util.Scanner;
     3. We need to show 1 card of a DEALER when the game starts. Then PLAYER starts the game as #2 says.
     4. Shuwei's idea: We need to use Hand.java.
        This is related to removeCard() in hit(); removeCard should be from Deck.java but not Hand.java.
-
      */
 public class PlayDemo {
     private static final int WINNING_SCORE = 21;
     private static final int DEALER_MAX = 17;
+
     public static void main(String[] args) {
         BlackJack game = new BlackJack();
         Deck deck = new Deck();
@@ -54,14 +54,14 @@ public class PlayDemo {
 
         Card initCard1 = game.hit(deck);
         Card initCard2 = game.hit(deck);
-        System.out.println("Player's card are " + initCard1.getNameAsStr() + " of " + initCard1.getSuitAsStr()  + " and " +
+        System.out.println("Player's card are " + initCard1.getNameAsStr() + " of " + initCard1.getSuitAsStr() + " and " +
                 initCard2.getNameAsStr() + " of " + initCard2.getSuitAsStr());
         System.out.println("Player's score: " + game.getPlayerScore());
         // add 1, since 2 is hidden
         game.nextPlayer();
         Card pcInitCard1 = game.hit(deck);
 
-        System.out.println("\nComputer's card are " + pcInitCard1.getNameAsStr() + " of " +  pcInitCard1.getSuitAsStr() +
+        System.out.println("\nComputer's card are " + pcInitCard1.getNameAsStr() + " of " + pcInitCard1.getSuitAsStr() +
                 " and another is hidden");
         //game.setComputerScore(game.cardValue(pcInitCard1));
         System.out.println("Computer's score: " + game.getComputerScore());
@@ -98,15 +98,12 @@ public class PlayDemo {
         }
 
         // Player got blackjack and the game is over.
-        if (game.getPlayerScore() == WINNING_SCORE){
+        if (game.getPlayerScore() == WINNING_SCORE) {
             System.out.println("\n\nCongrats! You got blackjack");
             System.exit(0);
         }
 
-
-        /*
-        It's now the dealers turn.
-         */
+        // It's now the dealers turn.
         if (game.isBusted()) {
             System.out.println("\n****Bust!****\n");
             System.out.print("Winner is " + game.nextPlayer());
@@ -124,12 +121,10 @@ public class PlayDemo {
             }
             if (game.getWinner() == null) {
                 System.out.println("Game is a tie! No winner.");
-            }
-            else if (game.getComputerScore() > WINNING_SCORE) {
+            } else if (game.getComputerScore() > WINNING_SCORE) {
                 System.out.println("Dealer busted!\n");
                 System.out.print(game.nextPlayer() + " is the winner!");
-            }
-            else System.out.println(game.getWinner() + " is the winner!");
+            } else System.out.println(game.getWinner() + " is the winner!");
         }
 
 /*
