@@ -54,17 +54,17 @@ public class PlayDemo {
 
         Card initCard1 = game.hit(deck);
         Card initCard2 = game.hit(deck);
-        System.out.println("Init card are " + initCard1.getSuitAsStr() + initCard1.getNameAsStr() + " and " +
-                initCard2.getSuitAsStr() + initCard2.getNameAsStr());
-        System.out.println("init player score: " + game.getPlayerScore());
+        System.out.println("Player's card are " + initCard1.getNameAsStr() + " of " + initCard1.getSuitAsStr()  + " and " +
+                initCard2.getNameAsStr() + " of " + initCard2.getSuitAsStr());
+        System.out.println("Player's score: " + game.getPlayerScore());
         // add 1, since 2 is hidden
         game.nextPlayer();
         Card pcInitCard1 = game.hit(deck);
 
-        System.out.println("\nInit card are " + pcInitCard1.getSuitAsStr() + pcInitCard1.getNameAsStr() +
+        System.out.println("\nComputer's card are " + pcInitCard1.getNameAsStr() + " of " +  pcInitCard1.getSuitAsStr() +
                 " and another is hidden");
         //game.setComputerScore(game.cardValue(pcInitCard1));
-        System.out.println("init computer score: " + game.getComputerScore());
+        System.out.println("Computer's score: " + game.getComputerScore());
         computerHand.addCard(deck.removeCard());
         computerHand.addCard(deck.removeCard());
 
@@ -106,21 +106,27 @@ public class PlayDemo {
                 Card pcInitCard2 = game.hit(deck);
                 computerHand.addCard(pcInitCard2);
                 System.out.println("Hidden card is " + pcInitCard2.getNameAsStr() + " of " + pcInitCard2.getSuitAsStr());
-
                 Card newCard = game.hit(deck);
                 computerHand.addCard(newCard);
 
 
-                System.out.println("Computer got " + newCard.getNameAsStr() + " of " + newCard.getSuitAsStr());
+                System.out.println("\nComputer got " + newCard.getNameAsStr() + " of " + newCard.getSuitAsStr());
                 System.out.println("Computer score: " + game.getComputerScore());
             }
-            if (game.getWinner() == null) System.out.println("Game tie! No winner");
+            if (game.getWinner() == null) System.out.println("Game is a tie! No winner");
             else if (game.getComputerScore() > WINNING_SCORE) {
-                System.out.println("Dealer busted!");
-                System.out.print("Winner is " + game.nextPlayer());
-            } else System.out.println("The winner is " + game.getWinner());
+                System.out.println("Dealer busted!\n");
+                System.out.print(game.nextPlayer() + " is the winner!");
+            }
+            // added this because if Player's score = 21 and Dealer's score = 21 -> result = tie.
+            else if((game.getComputerScore() == WINNING_SCORE) == (game.getPlayerScore() == WINNING_SCORE)){
+                System.out.println("Game is a tie");
+            }
+            else System.out.println(game.getWinner() + " is the winner!");
         }
 
+
+        // Error when computer has a ace and hidden card is a King, Queen, etc..
 
     }
 }
