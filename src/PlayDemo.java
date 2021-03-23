@@ -103,25 +103,24 @@ public class PlayDemo {
             System.exit(0);
         }
 
-
-        /*
-        It's now the dealers turn.
-         */
+      // Dealers turn
         if (game.isBusted()) {
             System.out.println("\n****Bust!****\n");
             System.out.print("Winner is " + game.nextPlayer());
         } else {
-            // add player's second card here.
+            // Player's second card is revealed here.
             Card pcInitCard2 = game.hit(deck);
             computerHand.addCard(pcInitCard2);
             System.out.println("Hidden card is " + pcInitCard2.getNameAsStr() + " of " + pcInitCard2.getSuitAsStr());
             System.out.println("computer score is: " + game.getComputerScore());
 
+            // While loop takes into account player's score and determines if it should continue.
             while (game.getComputerScore() < DEALER_MAX) {
                 Card newCard = game.hit(deck);
                 System.out.println("\nComputer got " + newCard.getNameAsStr() + " of " + newCard.getSuitAsStr());
                 System.out.println("Computer score: " + game.getComputerScore());
             }
+            // refer to BlackJack class for winning details.
             if (game.getWinner() == null) {
                 System.out.println("Game is a tie! No winner.");
             }
@@ -145,6 +144,10 @@ public class PlayDemo {
          2. Error when computer score is greater than 17 and less than Bust value on initial turn.
          computer adds more cards.
              cards are King of hearts and 10 of diamond = 20 -> computer should hold.
+
+         - If the dealer first card is 10 and the next card is 7 then its turn ends because value is not
+           less than DEALER_MAX
+         - Dealer will also win automatically if Ace and 10 or face card.
 */
     }
 }

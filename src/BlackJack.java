@@ -46,7 +46,7 @@ public class BlackJack {
     }
 
     public Card hit(Deck deck) {
-        Card newCard = deck.removeCard(); // card value must translate to an int.
+        Card newCard = deck.removeCard();
         if (this.player == Player.PLAYER) {
             this.playerScore += cardValue(newCard);
         } else {
@@ -55,10 +55,18 @@ public class BlackJack {
         return newCard;
     }
 
+    /**
+     * If player decides to stand with his current score. The player will change from Player
+     * to dealer.
+     */
     public void stand() {
         nextPlayer();
     }
 
+    /**
+     * Method that goes through out logic to determine a winner.
+     * @return a player object if either the dealer or player won or null if neither won.
+     */
     public Player getWinner() {
 //        if (playerScore == WINNING_SCORE)
 //            return Player.PLAYER;
@@ -92,13 +100,17 @@ public class BlackJack {
         }
         return null;
     }
-
+    // I don't think this is used so we can delete?
     public boolean gameOver() {
         if (playerScore == computerScore && playerScore <= WINNING_SCORE) return true;
         return getWinner() != null;
         //else if (computerScore >= 17) return true;
     }
 
+    /**
+     * method the helps determine if the player's score is over 21.
+     * @return
+     */
     public boolean isBusted() {
         if (player == Player.PLAYER) return (playerScore > WINNING_SCORE);
         else return computerScore > WINNING_SCORE;
