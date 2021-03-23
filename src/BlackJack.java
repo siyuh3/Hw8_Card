@@ -67,23 +67,30 @@ public class BlackJack {
 //        if(playerScore == computerScore && computerScore < WINNING_SCORE && playerScore < WINNING_SCORE){
 //            return null;
 //        }
-        // Computer busts and Player is less than or equal to 21.
-        if(computerScore > WINNING_SCORE && playerScore <= WINNING_SCORE){
+        // PLAYER got Blackjack!
+        if(playerScore == WINNING_SCORE){
             return Player.PLAYER;
         }
-        // player busts
+        // PLAYER is busted.
         else if(playerScore > WINNING_SCORE){
             return Player.DEALER;
         }
-        // Both players are less than 21 and player is greater than computer.
-        else if(computerScore < WINNING_SCORE && computerScore < playerScore){
-            return Player.PLAYER;
-        }
-        // Both players are less than 21 and computer score is greater than players.
-        else if(computerScore < WINNING_SCORE && computerScore > playerScore){
+        // DEALER got Blackjack.
+        else if(computerScore == WINNING_SCORE){
             return Player.DEALER;
         }
-        else if(computerScore == WINNING_SCORE){
+        // DEALER is busted and PLAYER is less than 21.
+        else if(computerScore > WINNING_SCORE && playerScore < WINNING_SCORE){
+            return Player.PLAYER;
+        }
+        // Both PLAYER and DEALER are less than 21
+        // and the PLAYER is greater than computer.
+        else if(computerScore < playerScore && playerScore < WINNING_SCORE){
+            return Player.PLAYER;
+        }
+        // Both PLAYER and DEALER are less than 21
+        // and the DEALER is greater than the player.
+        else if(playerScore < computerScore && computerScore < WINNING_SCORE){
             return Player.DEALER;
         }
         return null;
