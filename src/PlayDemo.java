@@ -127,6 +127,8 @@ public class PlayDemo {
 
 
         // Error when computer has a ace and hidden card is a King, Queen, etc..
+        // Error when computer score is greater than 17 on initial turn
+            // cards are King of hearts and 10 of diamond = 20 -> computer should hold.
 
     }
 }
