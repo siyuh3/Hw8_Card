@@ -60,11 +60,36 @@ public class BlackJack {
     }
 
     public Player getWinner() {
-        if (playerScore == WINNING_SCORE) return Player.PLAYER;
-        else if (computerScore == WINNING_SCORE) return Player.DEALER;
-        else if (playerScore > WINNING_SCORE) return Player.DEALER;
-        else if (playerScore > computerScore) return Player.PLAYER;
-        else if (computerScore > playerScore) return Player.DEALER;
+//        if (playerScore == WINNING_SCORE)
+//            return Player.PLAYER;
+//        else if (computerScore == WINNING_SCORE) return Player.DEALER;
+//        else if (playerScore > WINNING_SCORE) return Player.DEALER;
+//        else if (playerScore > computerScore) return Player.PLAYER;
+//        else if (computerScore > playerScore) return Player.DEALER;
+
+        // when both players have the same score and are less than 21.
+//        if(playerScore == computerScore && computerScore < WINNING_SCORE && playerScore < WINNING_SCORE){
+//            return null;
+//        }
+        // Computer busts and Player is less than or equal to 21.
+        if(computerScore > WINNING_SCORE && playerScore <= WINNING_SCORE){
+            return Player.PLAYER;
+        }
+        // player busts
+        else if(playerScore > WINNING_SCORE){
+            return Player.DEALER;
+        }
+        // Both players are less than 21 and player is greater than computer.
+        else if(computerScore < WINNING_SCORE && computerScore < playerScore){
+            return Player.PLAYER;
+        }
+        // Both players are less than 21 and computer score is greater than players.
+        else if(computerScore < WINNING_SCORE && computerScore > playerScore){
+            return Player.DEALER;
+        }
+        else if(computerScore == WINNING_SCORE){
+            return Player.DEALER;
+        }
         return null;
     }
 
