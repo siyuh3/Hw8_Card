@@ -103,8 +103,6 @@ public class PlayDemo {
             System.exit(0);
         }
 
-        // Busted --> User win
-        // no Busted --> keep playing
 
         /*
         It's now the dealers turn.
@@ -113,22 +111,17 @@ public class PlayDemo {
             System.out.println("\n****Bust!****\n");
             System.out.print("Winner is " + game.nextPlayer());
         } else {
-            while (game.getComputerScore() < DEALER_MAX || game.getComputerScore() <= WINNING_SCORE) {
-                // reveal the second init card
-                Card pcInitCard2 = game.hit(deck);
-                computerHand.addCard(pcInitCard2);
+            // add player's second card here.
+            Card pcInitCard2 = game.hit(deck);
+            computerHand.addCard(pcInitCard2);
+            System.out.println("Hidden card is " + pcInitCard2.getNameAsStr() + " of " + pcInitCard2.getSuitAsStr());
+            System.out.println("computer score is: " + game.getComputerScore());
 
-                System.out.println("Hidden card is " + pcInitCard2.getNameAsStr() + " of " + pcInitCard2.getSuitAsStr());
-                System.out.println("computer score is: " + game.getComputerScore());
-
-                System.out.println("\n---Card is no longer hidden---\n"); // added this to test out if the card was hidden or not
-
+            while (game.getComputerScore() < DEALER_MAX) {
                 Card newCard = game.hit(deck);
-
                 System.out.println("\nComputer got " + newCard.getNameAsStr() + " of " + newCard.getSuitAsStr());
                 System.out.println("Computer score: " + game.getComputerScore());
             }
-
             if (game.getWinner() == null) {
                 System.out.println("Game is a tie! No winner.");
             }
@@ -136,25 +129,22 @@ public class PlayDemo {
                 System.out.println("Dealer busted!\n");
                 System.out.print(game.nextPlayer() + " is the winner!");
             }
-            // added this because if Player's score = 21 and Dealer's score = 21 -> result = tie.
-//            else if((game.getComputerScore() == WINNING_SCORE) == (game.getPlayerScore() == WINNING_SCORE)){
-//                System.out.println("Game is a tie");
-//            }
             else System.out.println(game.getWinner() + " is the winner!");
         }
 
 /*
          Pending checks:
-         1. Error when computer has a ace and hidden card is a King, Queen, etc.. value = 11 instead of 21.
 
-         2. Error when computer score is greater than 17 and less than Bust value on initial turn.
-         computer adds more cards.
-             cards are King of hearts and 10 of diamond = 20 -> computer should hold.
 
 
         //Solved!
         Error when both scores are less than 21 and computer has score > than players -- result should not be a tie.
         3. Player draws a card and total is now 21 - game should end.
+        1. Error when computer has a ace and hidden card is a King, Queen, etc.. value = 11 instead of 21.
+
+         2. Error when computer score is greater than 17 and less than Bust value on initial turn.
+         computer adds more cards.
+             cards are King of hearts and 10 of diamond = 20 -> computer should hold.
 */
     }
 }
