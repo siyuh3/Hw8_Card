@@ -117,12 +117,7 @@ public class PlayDemo {
                 // reveal the second init card
                 Card pcInitCard2 = game.hit(deck);
                 computerHand.addCard(pcInitCard2);
-                /*
-                When the dealer has more than 2 cards in his hand, the while loop will go back to the top and
-                call the hidden card function again. This adds another card to dealers hand.
-                The problem I'm facing is when the dealer score is = 17, the program wants to draw another card
-                when it should instead end the dealers turn.
-                 */
+
                 System.out.println("Hidden card is " + pcInitCard2.getNameAsStr() + " of " + pcInitCard2.getSuitAsStr());
                 System.out.println("computer score is: " + game.getComputerScore());
 
