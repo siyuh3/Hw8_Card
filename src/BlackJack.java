@@ -69,6 +69,7 @@ public class BlackJack {
 //        }
         // PLAYER got Blackjack!
         if(playerScore == WINNING_SCORE){
+            System.out.println("\n\n****Congrats! You got blackjack!****");
             return Player.PLAYER;
         }
         // PLAYER is busted.
