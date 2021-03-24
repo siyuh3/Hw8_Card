@@ -69,19 +69,21 @@ public class BlackJack {
 
 
     private void initializeGame() {
-        Card p1 = playerHit(); //player
-        //display
+        //shuffle cards
+        deck.shuffleCard();
+        // two cards for player
+        Card p1 = playerHit();
+        Card p2 = playerHit();
+        System.out.println();
         InAndOut.displayPlayerCard(p1);
-        Card p2 = playerHit(); // player
-        //display
         InAndOut.displayPlayerCard(p2);
         InAndOut.displayPlayerScore(this);
-
+        System.out.println();
+        //two cards for dealer
         Card d1 = dealerHit();
-        //display
-        InAndOut.displayDealerCard(d1);
         Card d2 = dealerHit();
-        // don't display
+        InAndOut.displayDealerCard(d1);
+        // not displaying the second card
         System.out.println("Second card of dealer is hidden.");
     }
     private static boolean isBusted(int score) {
@@ -91,15 +93,9 @@ public class BlackJack {
 
 
 
-
-
-
-
     public static void main(String[] args) {
         BlackJack game = new BlackJack();
-        game.deck.shuffleCard();
         game.initializeGame();
-
 
         // player's turn
         boolean playerStand = false;
@@ -127,7 +123,6 @@ public class BlackJack {
 
         // dealer's turn if player did not get busted
         if (!isBusted(countScoreOfHand(game.playerHand.hand))) {
-
             System.out.println("Dealer's turn now");
 
             while (countScoreOfHand(game.dealerHand.hand) < DEALER_MAX) {
