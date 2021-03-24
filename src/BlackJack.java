@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.Scanner;
-
 
 public class BlackJack {
 
@@ -38,7 +36,7 @@ public class BlackJack {
 
     public static int countScoreOfHand(ArrayList<Card> hand) {
         int score = 0;
-        int countOfAce =0;
+        int countOfAce = 0;
         for (int i = 0; i < hand.size(); i++) {
             score += convertCardToValue(hand.get(i));
             if (hand.get(i).getName() == 1) {
@@ -77,17 +75,17 @@ public class BlackJack {
         System.out.println();
         //two cards for dealer
         Card d1 = dealerHit();
-        Card d2 = dealerHit();
         InAndOut.displayDealerCard(d1);
         // not displaying the second card
         System.out.println("Second card of dealer is hidden.");
+        InAndOut.displayDealerScore(this);
+        Card d2 = dealerHit();
     }
+
     private static boolean isBusted(int score) {
         if (score > WINNING_SCORE) return true;
         return false;
     }
-
-
 
     public static void main(String[] args) {
         BlackJack game = new BlackJack();
@@ -111,7 +109,7 @@ public class BlackJack {
             }
             // check if the player has busted
             if (isBusted(countScoreOfHand(game.playerHand.hand))) {
-                System.out.println("Player busted. Dealer won. Game over!");
+                System.out.println("\n*** Player busted! Dealer won! Game over! ***");
                 break;
             }
         }
@@ -119,41 +117,40 @@ public class BlackJack {
 
         // dealer's turn if player did not get busted
         if (!isBusted(countScoreOfHand(game.playerHand.hand))) {
-            System.out.println("Dealer's turn now");
+            System.out.println("\n*** Dealer's turn now ***");
+            Card hidden = game.dealerHand.hand.get(1);
+            System.out.println("The hidden card of dealer is : " + hidden.getNameAsStr() + " of " + hidden.getSuitAsStr());
+            InAndOut.displayDealerScore(game);
 
             while (countScoreOfHand(game.dealerHand.hand) < DEALER_MAX) {
                 Card newCard = game.dealerHit();
                 InAndOut.displayDealerCard(newCard);
+                InAndOut.displayDealerScore(game);
             }
             // check if the dealer has busted
             if (isBusted(countScoreOfHand(game.dealerHand.hand))) {
-                System.out.println("Dealer has busted. Player won. Game over!");
+                System.out.println();
+                InAndOut.displayPlayerScore(game);
+                InAndOut.displayDealerScore(game);
+                System.out.println("\n*** Dealer busted! Player won! Game over! ***");
             } else {
-                System.out.println("\nDealer chose to stand");
+                System.out.println("\nDealer chose to stand\n");
                 // Compare the score
+                System.out.println("*** Final Score ***");
                 int scoreOfPlayer = countScoreOfHand(game.playerHand.hand);
                 int scoreOfDealer = countScoreOfHand(game.dealerHand.hand);
                 InAndOut.displayPlayerScore(game);
                 InAndOut.displayDealerScore(game);
 
                 if (scoreOfDealer == scoreOfPlayer) {
-                    System.out.println("It's a tie! Game over!");
+                    System.out.println("\nIt's a tie! Game over!");
                 } else if (scoreOfDealer < scoreOfPlayer) {
-                    System.out.println("Player won! Game over!");
+                    System.out.println("\nPlayer won! Game over!");
                 } else {
-                    System.out.println("Dealer won! Game over!");
+                    System.out.println("\nDealer won! Game over!");
                 }
-                Card hidden = game.dealerHand.hand.get(1);
-                System.out.print("The hidden card of dealer is : " + hidden.getNameAsStr() + " of " + hidden.getSuitAsStr());
-
             }
         }
-
-
-
-
-
-
 
 
     }
