@@ -1,148 +1,230 @@
-/**
- * @program: BlackJack
- * @description: This class represents the BlackJake game play
- * @author: Siyu Hou, Kicho Yu
- * @create: 2021-03-20 23:39
- **/
+import java.util.ArrayList;
+import java.util.Scanner;
+
+// this is the class where we implement the blackjack game.
+/*
+2 players: computer vs human.
+methods:
+hit -- add a card to sum
+stand -- stop
+ */
 public class BlackJack {
-    private Player player;
-    private int playerScore;
-    private int computerScore;
+
+    //    private Player player;
+//    private Player dealer;
+    private Deck deck;
+    private Hand playerHand;
+    private Hand dealerHand;
+    private int countOfActions;// it is to determine who the next player is
+
+
+    // As score is dynamic where the value of Ace varies, we don't keep track of the score.
+    // Instead, whenever we want to know that score, we compute it with a given hand
+
     private static final int WINNING_SCORE = 21;
+    private static final int DEALER_MAX = 17;
     private static final int CARDS_IN_HAND_IN_THE_BEGINNING = 2;
 
-    /**
-     * Default constructor.
-     */
     public BlackJack() {
-        this.player = Player.PLAYER;
-        setPlayerScore(0);
-        setComputerScore(0);
+//        player = Player.PLAYER;
+//        dealer = Player.DEALER;
+        deck = new Deck();
+        playerHand = new Hand();
+        dealerHand = new Hand();
+//        countOfActions = 0;
     }
 
-    /**
-     * get current player
-     *
-     * @return current player
-     */
-    public Player getPlayer() {
-        return this.player;
-    }
+//    public Player getPlayer() {
+//        if (countOfActions % 2 == 0) return player;
+//        return dealer;
+//    }
 
-    /**
-     * @return next player
-     */
-    public Player nextPlayer() {
-        if (this.player == Player.PLAYER) {
-            this.player = Player.DEALER;
-        } else if (this.player == Player.DEALER) {
-            this.player = Player.PLAYER;
-        }
-        return this.player;
-    }
 
-    public Card hit(Deck deck) {
-        Card newCard = deck.removeCard(); // card value must translate to an int.
-        if (this.player == Player.PLAYER) {
-            this.playerScore += cardValue(newCard);
-        } else {
-            this.computerScore += cardValue(newCard);
+    public Card playerHit() {
+        Card newCard = deck.removeCard();
+        if (newCard != null) {
+            playerHand.addCard(newCard);
         }
         return newCard;
     }
 
-    public void stand() {
-        nextPlayer();
+    public Card dealerHit() {
+        Card newCard = deck.removeCard();
+        if (newCard != null) {
+            dealerHand.addCard(newCard);
+        }
+        return newCard;
     }
 
-    public Player getWinner() {
-//        if (playerScore == WINNING_SCORE)
-//            return Player.PLAYER;
-//        else if (computerScore == WINNING_SCORE) return Player.DEALER;
-//        else if (playerScore > WINNING_SCORE) return Player.DEALER;
-//        else if (playerScore > computerScore) return Player.PLAYER;
-//        else if (computerScore > playerScore) return Player.DEALER;
-
-        // when both players have the same score and are less than 21.
-//        if(playerScore == computerScore && computerScore < WINNING_SCORE && playerScore < WINNING_SCORE){
-//            return null;
-//        }
-        // PLAYER got Blackjack!
-        if(playerScore == WINNING_SCORE){
-            return Player.PLAYER;
-        }
-        // PLAYER is busted.
-        else if(playerScore > WINNING_SCORE){
-            return Player.DEALER;
-        }
-        // DEALER got Blackjack.
-        else if(computerScore == WINNING_SCORE){
-            return Player.DEALER;
-        }
-        // DEALER is busted and PLAYER is less than 21.
-        else if(computerScore > WINNING_SCORE && playerScore < WINNING_SCORE){
-            return Player.PLAYER;
-        }
-        // Both PLAYER and DEALER are less than 21
-        // and the PLAYER is greater than computer.
-        else if(computerScore < playerScore && playerScore < WINNING_SCORE){
-            return Player.PLAYER;
-        }
-        // Both PLAYER and DEALER are less than 21
-        // and the DEALER is greater than the player.
-        else if(playerScore < computerScore && computerScore < WINNING_SCORE){
-            return Player.DEALER;
-        }
-        return null;
-    }
-
-    public boolean gameOver() {
-        if (playerScore == computerScore && playerScore <= WINNING_SCORE) return true;
-        return getWinner() != null;
-        //else if (computerScore >= 17) return true;
-    }
-
-    public boolean isBusted() {
-        if (player == Player.PLAYER) return (playerScore > WINNING_SCORE);
-        else return computerScore > WINNING_SCORE;
-    }
-
-    public int cardValue(Card card) {
-        int literalValue = card.getName();
-        if (literalValue == 1 && player == Player.PLAYER) {
-            playerScore += 11;
-            if (isBusted()) {
-                playerScore -= 11;
-                return 1;
-            } else {
-                playerScore -= 11;
-                return 11;
+    public static int countScoreOfHand(ArrayList<Card> hand) {
+        int score = 0;
+        int countOfAce =0;
+        for (int i = 0; i < hand.size(); i++) {
+            score += convertCardToValue(hand.get(i));
+            if (hand.get(i).getName() == 1) {
+                countOfAce += 1;
             }
-        } else if (literalValue == 1 && player == Player.DEALER) {
-            computerScore += 11;
-            if (isBusted()) {
-                computerScore -= 11;
-                return 1;
-            } else {
-                computerScore -= 11;
-                return 11;
+        }
+        while (isBusted(score) && countOfAce > 0) {
+            score -= 10;
+            countOfAce -= 1;
+        }
+        return score;
+    }
+    private static int convertCardToValue(Card c) {
+        int literalValue = c.getName();
+        if (literalValue == 1) {
+            // will be adjusted in the countScoreOfHand method
+            return 11;
+        } else if (literalValue > 10) {
+            return 10;
+        } else {
+            return literalValue;
+        }
+    }
+
+    private boolean isGameOver() {
+        // Either player of dealer busted
+        int playerScore = countScoreOfHand(playerHand.hand);
+        int dealerScore = countScoreOfHand(dealerHand.hand);
+        if (isBusted(playerScore)) {
+            return true;
+        } else if (isBusted(dealerScore)) {
+            return true;
+        }
+        return false;
+    }
+
+
+
+
+    private static boolean isBusted(int score) {
+        if (score > WINNING_SCORE) return true;
+        return false;
+    }
+
+    private static int getInput() {
+        int decision = -1;
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Hit or Stand");
+        String choice = keyboard.nextLine();
+        System.out.println("\n");
+        try {
+            if (choice.equalsIgnoreCase("hit")) {
+                decision = 1;
+            } else if (choice.equalsIgnoreCase("stand")) {
+                decision = 0;
             }
-        } else return Math.min(literalValue, 10);
+        } catch (Exception e) {
+            System.out.println("Not a valid input.");
+        }
+        return decision;
     }
 
-    public void setPlayerScore(int playerScore) {
-        this.playerScore = playerScore;
+
+    private void initializeGame() {
+        Card p1 = playerHit(); //player
+        //display
+        displayPlayerCard(p1);
+        Card p2 = playerHit(); // player
+        //display
+        displayPlayerCard(p2);
+        displayPlayerScore();
+
+        Card d1 = dealerHit();
+        //display
+        displayDealerCard(d1);
+        Card d2 = dealerHit();
+        // don't display
+        System.out.println("Second card of dealer is hidden.");
     }
 
-    public void setComputerScore(int computerScore) {
-        this.computerScore = computerScore;
+    private static void displayPlayerCard(Card c) {
+        System.out.println("Player got a card: " + c.getNameAsStr() + " of " + c.getSuitAsStr());
     }
 
-    public int getPlayerScore() {
-        return playerScore;
+    private void displayPlayerScore() {
+        int scoreOfPlayer = countScoreOfHand(playerHand.hand);
+        System.out.println("Player's score: " + scoreOfPlayer);
     }
 
-    public int getComputerScore() {
-        return computerScore;
+    private void displayDealerScore() {
+        int scoreOfPlayer = countScoreOfHand(dealerHand.hand);
+        System.out.println("Dealer's score: " + scoreOfPlayer);
+    }
+
+    private static void displayDealerCard(Card c) {
+        System.out.println("Dealer got a card: " + c.getNameAsStr() + " of " + c.getSuitAsStr());
+    }
+    public static void main(String[] args) {
+        BlackJack game = new BlackJack();
+        game.deck.shuffleCard();
+        game.initializeGame();
+
+
+        // player's turn
+        boolean playerStand = false;
+        while (!playerStand) {
+            int hitOrStand = getInput();
+            // use while loop to get valid input
+            while (hitOrStand < 0) {
+                hitOrStand = getInput();
+            }
+            if (hitOrStand == 1) {
+                Card newCard = game.playerHit();
+                displayPlayerCard(newCard);
+                game.displayPlayerScore();
+            } else {
+                playerStand = true;
+                System.out.println("Player chose to stand");
+            }
+            // check if the player has busted
+            if (isBusted(countScoreOfHand(game.playerHand.hand))) {
+                System.out.println("Player busted. Dealer won. Game over!");
+                break;
+            }
+        }
+
+
+        // dealer's turn if player did not get busted
+        if (!isBusted(countScoreOfHand(game.playerHand.hand))) {
+
+            System.out.println("Dealer's turn now");
+
+            while (countScoreOfHand(game.dealerHand.hand) < DEALER_MAX) {
+                Card newCard = game.dealerHit();
+                displayDealerCard(newCard);
+            }
+            // check if the dealer has busted
+            if (isBusted(countScoreOfHand(game.dealerHand.hand))) {
+                System.out.println("Dealer has busted. Player won. Game over!");
+            } else {
+                System.out.println("\nDealer chose to stand");
+                // Compare the score
+                int scoreOfPlayer = countScoreOfHand(game.playerHand.hand);
+                int scoreOfDealer = countScoreOfHand(game.dealerHand.hand);
+                game.displayPlayerScore();
+                game.displayDealerScore();
+
+                if (scoreOfDealer == scoreOfPlayer) {
+                    System.out.println("It's a tie! Game over!");
+                } else if (scoreOfDealer < scoreOfPlayer) {
+                    System.out.println("Player won! Game over!");
+                } else {
+                    System.out.println("Dealer won! Game over!");
+                }
+                Card hidden = game.dealerHand.hand.get(1);
+                System.out.print("The hidden card of dealer is : " + hidden.getNameAsStr() + " of " + hidden.getSuitAsStr());
+
+            }
+        }
+
+
+
+
+
+
+
+
     }
 }
