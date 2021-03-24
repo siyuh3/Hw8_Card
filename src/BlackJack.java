@@ -111,10 +111,6 @@ public class BlackJack {
         //else if (computerScore >= 17) return true;
     }
 
-    /**
-     * method the helps determine if the player's score is over 21.
-     * @return
-     */
     public boolean isBusted() {
         if (player == Player.PLAYER) return (playerScore > WINNING_SCORE);
         else return computerScore > WINNING_SCORE;
