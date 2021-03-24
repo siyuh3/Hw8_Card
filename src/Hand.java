@@ -8,7 +8,7 @@ import java.util.Collections;
  * @create: 2021-03-16 23:44
  **/
 public class Hand extends Deck {
-    private final ArrayList<Card> hand;
+    public final ArrayList<Card> hand;
     private static final int NUMBER_OF_CARDS_IN_HAND = 5;
 
     /**
