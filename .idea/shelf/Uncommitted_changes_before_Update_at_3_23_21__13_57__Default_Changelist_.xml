@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Update_at_3_23_21,_13_57_[Default_Changelist]" date="1616533033723" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_23_21,_13_57_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 3/23/21, 13:57 [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Hw8_Card/Deck.class" />
+    <option name="AFTER_PATH" value="out/production/Hw8_Card/Deck.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_23_21,_13_57_[Default_Changelist]/Deck.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Hw8_Card/BlackJack.class" />
+    <option name="AFTER_PATH" value="out/production/Hw8_Card/BlackJack.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_23_21,_13_57_[Default_Changelist]/BlackJack.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Hw8_Card/Hand.class" />
+    <option name="AFTER_PATH" value="out/production/Hw8_Card/Hand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_23_21,_13_57_[Default_Changelist]/Hand.class" />
+  </binary>
+</changelist>

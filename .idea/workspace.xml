@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f9b0a899-3ace-42b8-a988-e54d7b99b494" name="Default Changelist" comment="Comment out isBusted">
+      <change beforePath="$PROJECT_DIR$/out/production/Hw8_Card/BlackJack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hw8_Card/BlackJack.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="newBranch" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="newBranch" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ptWuU51mDRrJ5gjCFcf8kWelL6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+  </component>
+  <component name="RunManager" selected="Application.BlackJack">
+    <configuration name="BlackJack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BlackJack" />
+      <module name="Hw8_Card" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Card" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Card" />
+      <module name="Hw8_Card" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Deck" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Deck" />
+      <module name="Hw8_Card" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Hand" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Hand" />
+      <module name="Hw8_Card" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PlayDemo" />
+      <module name="Hw8_Card" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BlackJack" />
+        <item itemvalue="Application.PlayDemo" />
+        <item itemvalue="Application.Hand" />
+        <item itemvalue="Application.Deck" />
+        <item itemvalue="Application.Card" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f9b0a899-3ace-42b8-a988-e54d7b99b494" name="Default Changelist" comment="" />
+      <created>1616003091584</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616003091584</updated>
+      <workItem from="1616003093202" duration="570000" />
+      <workItem from="1616011117192" duration="426000" />
+      <workItem from="1616101131260" duration="58000" />
+      <workItem from="1616101201498" duration="2765000" />
+      <workItem from="1616121129435" duration="3128000" />
+      <workItem from="1616348786669" duration="172000" />
+      <workItem from="1616371461791" duration="3873000" />
+      <workItem from="1616445360704" duration="11308000" />
+      <workItem from="1616613362115" duration="3643000" />
+      <workItem from="1616641412068" duration="4183000" />
+    </task>
+    <task id="LOCAL-00001" summary="Change descriptions">
+      <created>1616003277059</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1616003277059</updated>
+    </task>
+    <task id="LOCAL-00002" summary="&quot;final&quot;">
+      <created>1616101831914</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1616101831915</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Update toString">
+      <created>1616101895733</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1616101895733</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Spacing">
+      <created>1616102141673</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1616102141673</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Javadoc">
+      <created>1616102373243</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1616102373243</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Static variable">
+      <created>1616102692096</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1616102692096</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Increase readability in main function">
+      <created>1616103117607</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1616103117607</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Singular">
+      <created>1616103150584</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1616103150584</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Refactor shuffleCard()">
+      <created>1616121517805</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1616121517805</updated>
+    </task>
+    <task id="LOCAL-00010" summary="NUMBER_OF_CARDS">
+      <created>1616186027442</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1616186027442</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Update package and comments">
+      <created>1616198640479</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1616198640479</updated>
+    </task>
+    <task id="LOCAL-00012" summary="equalsIgnoreCase()">
+      <created>1616198909537</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1616198909537</updated>
+    </task>
+    <task id="LOCAL-00013" summary="getNameAsStr and getSuitAsStr">
+      <created>1616371756325</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1616371756325</updated>
+    </task>
+    <task id="LOCAL-00014" summary="WINNING_SCORE">
+      <created>1616372537995</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1616372537995</updated>
+    </task>
+    <task id="LOCAL-00015" summary="If-else statement">
+      <created>1616372947735</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1616372947735</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Comment about ace">
+      <created>1616373056059</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1616373056059</updated>
+    </task>
+    <task id="LOCAL-00017" summary="hold -&gt; stand">
+      <created>1616373167739</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1616373167739</updated>
+    </task>
+    <task id="LOCAL-00018" summary="More comments">
+      <created>1616373368664</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1616373368664</updated>
+    </task>
+    <task id="LOCAL-00019" summary="More comments!">
+      <created>1616373828662</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1616373828662</updated>
+    </task>
+    <task id="LOCAL-00020" summary="More comments!!">
+      <created>1616388318209</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1616388318209</updated>
+    </task>
+    <task id="LOCAL-00021" summary="More comments!!!">
+      <created>1616388436633</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1616388436633</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Comment out isBusted">
+      <created>1616448765372</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1616448765372</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Update isBusted">
+      <created>1616451103451</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1616451103451</updated>
+    </task>
+    <task id="LOCAL-00024" summary="CARDS_IN_HAND_IN_THE_BEGINNING">
+      <created>1616452392592</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1616452392592</updated>
+    </task>
+    <task id="LOCAL-00025" summary="isBust -&gt; isBusted">
+      <created>1616453834531</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1616453834531</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Comment">
+      <created>1616454143525</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1616454143525</updated>
+    </task>
+    <task id="LOCAL-00027" summary="NIT: Formatting">
+      <created>1616533161588</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1616533161588</updated>
+    </task>
+    <task id="LOCAL-00028" summary="&lt; WINNING_SCORE instead of !=">
+      <created>1616536227955</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1616536227955</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Update if-else statement">
+      <created>1616537536404</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1616537536404</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Mark what is done and not done">
+      <created>1616538575804</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1616538575804</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Print dealer's score on the right timing">
+      <created>1616615093138</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1616615093138</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Delete PlayDemo.java">
+      <created>1616645909901</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1616645909901</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Singular" />
+    <MESSAGE value="Refactor shuffleCard()" />
+    <MESSAGE value="NUMBER_OF_CARDS" />
+    <MESSAGE value="Update package and comments" />
+    <MESSAGE value="equalsIgnoreCase()" />
+    <MESSAGE value="getNameAsStr and getSuitAsStr" />
+    <MESSAGE value="WINNING_SCORE" />
+    <MESSAGE value="If-else statement" />
+    <MESSAGE value="Comment about ace" />
+    <MESSAGE value="hold -&gt; stand" />
+    <MESSAGE value="More comments" />
+    <MESSAGE value="More comments!" />
+    <MESSAGE value="More comments!!" />
+    <MESSAGE value="More comments!!!" />
+    <MESSAGE value="Comment out isBusted" />
+    <MESSAGE value="Update isBusted" />
+    <MESSAGE value="CARDS_IN_HAND_IN_THE_BEGINNING" />
+    <MESSAGE value="isBust -&gt; isBusted" />
+    <MESSAGE value="Comment" />
+    <MESSAGE value="NIT: Formatting" />
+    <MESSAGE value="&lt; WINNING_SCORE instead of !=" />
+    <MESSAGE value="Update if-else statement" />
+    <MESSAGE value="Mark what is done and not done" />
+    <MESSAGE value="Print dealer's score on the right timing" />
+    <MESSAGE value="Delete PlayDemo.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete PlayDemo.java" />
+  </component>
+</project>
