@@ -122,7 +122,8 @@ public class BlackJack {
         if (!isBusted(countScoreOfHand(game.playerHand.hand))) {
             System.out.println("\n*** Dealer's turn now ***");
             Card hidden = game.dealerHand.hand.get(1);
-            System.out.println("The hidden card of dealer is : " + hidden.getNameAsStr() + " of " + hidden.getSuitAsStr());
+            System.out.println("The hidden card of dealer: " + hidden.getNameAsStr() + " of " +
+                    hidden.getSuitAsStr() + " " + hidden.getUnicode());
             InAndOut.displayDealerScore(game);
 
             while (countScoreOfHand(game.dealerHand.hand) < DEALER_MAX) {
