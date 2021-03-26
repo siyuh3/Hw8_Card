@@ -1,3 +1,5 @@
+import java.io.PrintStream;
+
 /**
  * @program: Card
  * @description: This class represents the card that stores the
@@ -110,6 +112,35 @@ public class Card {
             case 12 -> "Queen";
             case 13 -> "King";
             default -> null;
+        };
+    }
+
+    public String getUnicode() {
+        String unicode = "";
+        switch (suit) {
+            case 1 -> unicode = "\u2660";
+            case 2 -> unicode = "\u2661";
+            case 3 -> unicode = "\u2662";
+            case 4 -> unicode = "\u2663";
+            default -> throw new IllegalStateException("Invalid suit: " + suit);
+        };
+
+        unicode += " \uD83C";
+        return switch (name) {
+            case 1 -> unicode + "\uDCA1";
+            case 2 -> unicode + "\uDCA2";
+            case 3 -> unicode + "\uDCA3";
+            case 4 -> unicode + "\uDCA4";
+            case 5 -> unicode + "\uDCA5";
+            case 6 -> unicode + "\uDCA6";
+            case 7 -> unicode + "\uDCA7";
+            case 8 -> unicode + "\uDCA8";
+            case 9 -> unicode + "\uDCA9";
+            case 10 -> unicode + "\uDCAA";
+            case 11 -> unicode + "\uDCAB";
+            case 12 -> unicode + "\uDCAD";
+            case 13 -> unicode + "\uDCAE";
+            default -> throw new IllegalStateException("Invalid name: " + name);
         };
     }
 }

@@ -1,3 +1,5 @@
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
 public class InAndOut {
@@ -21,11 +23,13 @@ public class InAndOut {
     }
 
     static void displayPlayerCard(Card c) {
-        System.out.println("Player got a card: " + c.getNameAsStr() + " of " + c.getSuitAsStr());
+        System.out.println("Player got a card: " + c.getNameAsStr() + " of " + c.getSuitAsStr() +
+                " " + c.getUnicode());
     }
 
     static void displayDealerCard(Card c) {
-        System.out.println("Dealer got a card: " + c.getNameAsStr() + " of " + c.getSuitAsStr());
+        System.out.println("Dealer got a card: " + c.getNameAsStr() + " of " + c.getSuitAsStr() +
+                " " + c.getUnicode());
     }
 
     static void displayPlayerScore(BlackJack game) {
