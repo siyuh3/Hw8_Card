@@ -4,7 +4,7 @@ import java.io.PrintStream;
  * @program: Card
  * @description: This class represents the card that stores the
  * suit (e.g., Clubs, Diamonds, Hearts, Spades) and its name
- * @author: Siyu Hou
+ * @author: Siyu Hou, Kicho Yu
  * @create: 2021-03-16 23:39
  **/
 public class Card {
