@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9b0a899-3ace-42b8-a988-e54d7b99b494" name="Default Changelist" comment="Comment out isBusted">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_24_21__12_18__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_24_21__12_18__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_24_21__20_07__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_24_21__20_07__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_21_21__10_49__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_21_21__10_49__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_23_21__13_57__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_23_21__13_57__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_24_21__12_16__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_24_21__12_16__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="f9b0a899-3ace-42b8-a988-e54d7b99b494" name="Default Changelist" comment="Updated main()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hw8_Card.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Hw8_Card.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hw8_Card/Hand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hw8_Card/Hand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hw8_Card/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +42,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
-  <component name="RunManager" selected="Application.Hand">
+  <component name="RunManager" selected="Application.BlackJack">
     <configuration name="BlackJack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BlackJack" />
       <module name="Hw8_Card" />
@@ -95,8 +91,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Hand" />
         <item itemvalue="Application.BlackJack" />
+        <item itemvalue="Application.Hand" />
         <item itemvalue="Application.Card" />
         <item itemvalue="Application.PlayDemo" />
         <item itemvalue="Application.Deck" />
@@ -346,7 +342,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616645909901</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Updated main()">
+      <created>1616898009145</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1616898009145</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,7 +368,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Singular" />
     <MESSAGE value="Refactor shuffleCard()" />
     <MESSAGE value="NUMBER_OF_CARDS" />
     <MESSAGE value="Update package and comments" />
@@ -390,6 +392,7 @@
     <MESSAGE value="Mark what is done and not done" />
     <MESSAGE value="Print dealer's score on the right timing" />
     <MESSAGE value="Delete PlayDemo.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete PlayDemo.java" />
+    <MESSAGE value="Updated main()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated main()" />
   </component>
 </project>
