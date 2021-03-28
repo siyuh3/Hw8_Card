@@ -125,7 +125,10 @@ public class Hand extends Deck {
         hand1.toString();
         System.out.println("\n===Sorted card in hand2 (expecting empty)===");
         hand2.toString();
+        System.out.println("\n===Cards in deck1 after adding 10 cards back===");
+        deck1.toString();
         System.out.println("\n===Sorted card in deck1===");
+        deck1.sortCard();
         deck1.toString();
         System.out.println("\n===Size should be 52===");
         System.out.println(deck1.getDeck().size());
