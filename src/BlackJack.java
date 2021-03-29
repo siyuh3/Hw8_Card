@@ -1,7 +1,13 @@
 import java.util.ArrayList;
-
+/**
+ * @program: BlackJack
+ * @description: This class represent BlackJack game
+ * @author: Siyu Hou, Kicho Yu
+ * @create: 2021-03-16 23:39
+ **/
 public class BlackJack {
-
+    private static final int WINNING_SCORE = 21;
+    private static final int DEALER_MAX = 17;
     private Deck deck;
     Hand playerHand;
     Hand dealerHand;
@@ -9,9 +15,9 @@ public class BlackJack {
     // As score is dynamic where the value of Ace varies, we don't keep track of the score.
     // Instead, whenever we want to know that score, we compute it with a given hand
 
-    private static final int WINNING_SCORE = 21;
-    private static final int DEALER_MAX = 17;
-
+    /**
+     * default constructor
+     */
     public BlackJack() {
         deck = new Deck();
         playerHand = new Hand();
@@ -19,6 +25,10 @@ public class BlackJack {
     }
 
 
+    /**
+     * hit the card from deck
+     * @return one card
+     */
     public Card playerHit() {
         Card newCard = deck.removeCard();
         if (newCard != null) {
@@ -28,6 +38,10 @@ public class BlackJack {
     }
 
 
+    /**
+     * hit the card from deck for dealer
+     * @return one card
+     */
     public Card dealerHit() {
         Card newCard = deck.removeCard();
         if (newCard != null) {
@@ -36,6 +50,11 @@ public class BlackJack {
         return newCard;
     }
 
+    /**
+     * count the score of hand
+     * @param hand ArrayList of Card object
+     * @return int which is score
+     */
     public static int countScoreOfHand(ArrayList<Card> hand) {
         int score = 0;
         int countOfAce = 0;
@@ -52,6 +71,11 @@ public class BlackJack {
         return score;
     }
 
+    /**
+     * convert card to value
+     * @param c Card object
+     * @return int which is card value
+     */
     private static int convertCardToValue(Card c) {
         int literalValue = c.getName();
         if (literalValue == 1) {
@@ -65,6 +89,9 @@ public class BlackJack {
     }
 
 
+    /**
+     * initialize the game
+     */
     private void initializeGame() {
         //shuffle cards
         deck.shuffleCard();
@@ -85,11 +112,20 @@ public class BlackJack {
         Card d2 = dealerHit();
     }
 
+    /**
+     * check whether busted
+     * @param score score in hand
+     * @return busted or not
+     */
     private static boolean isBusted(int score) {
         if (score > WINNING_SCORE) return true;
         return false;
     }
 
+    /**
+     * keep playing the game
+     * @param args arrays
+     */
     public static void main(String[] args) {
         BlackJack game = new BlackJack();
         game.initializeGame();
@@ -108,7 +144,7 @@ public class BlackJack {
                 InAndOut.displayPlayerScore(game);
             } else {
                 playerStand = true;
-                System.out.println("Player chose to stand");
+                System.out.println("Player choose to stand");
             }
             // check if the player has busted
             if (isBusted(countScoreOfHand(game.playerHand.hand))) {
@@ -138,7 +174,7 @@ public class BlackJack {
                 InAndOut.displayDealerScore(game);
                 System.out.println("\n*** Dealer busted! Player won! Game over! ***");
             } else {
-                System.out.println("\nDealer chose to stand\n");
+                System.out.println("\nDealer choose to stand\n");
                 // Compare the score
                 System.out.println("*** Final Score ***");
                 int scoreOfPlayer = countScoreOfHand(game.playerHand.hand);

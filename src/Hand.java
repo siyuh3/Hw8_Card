@@ -18,17 +18,10 @@ public class Hand extends Deck {
         this.hand = new ArrayList<Card>(NUMBER_OF_CARDS_IN_HAND);
     }
 
-//    public Hand(ArrayList<Card> hand){
-//        this.hand = new ArrayList<Card>();
-//    }
-
     /**
      * Shuffles the cards in a hand
      */
     @Override
-//    public void shuffleCard() {
-//        super.shuffleCard();
-//    }
     public void shuffleCard() {
         for (int i = 0; i < NUMBER_OF_CARDS_IN_HAND; i++) {
             int rand1 = (int) (Math.random() * NUMBER_OF_CARDS_IN_HAND);
@@ -92,6 +85,11 @@ public class Hand extends Deck {
         return null;
     }
 
+    /**
+     * test the code
+     *
+     * @param args array
+     */
     public static void main(String[] args) {
         Deck deck1 = new Deck();
         Deck deck2 = new Deck();
