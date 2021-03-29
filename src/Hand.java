@@ -18,16 +18,23 @@ public class Hand extends Deck {
         this.hand = new ArrayList<Card>(NUMBER_OF_CARDS_IN_HAND);
     }
 
-    public Hand(ArrayList<Card> hand){
-        this.hand = new ArrayList<Card>();
-    }
+//    public Hand(ArrayList<Card> hand){
+//        this.hand = new ArrayList<Card>();
+//    }
 
     /**
      * Shuffles the cards in a hand
      */
     @Override
+//    public void shuffleCard() {
+//        super.shuffleCard();
+//    }
     public void shuffleCard() {
-        super.shuffleCard();
+        for (int i = 0; i < NUMBER_OF_CARDS_IN_HAND; i++) {
+            int rand1 = (int) (Math.random() * NUMBER_OF_CARDS_IN_HAND);
+            int rand2 = (int) (Math.random() * NUMBER_OF_CARDS_IN_HAND);
+            Collections.swap(hand, rand1, rand2);
+        }
     }
 
     /**
@@ -87,33 +94,54 @@ public class Hand extends Deck {
 
     public static void main(String[] args) {
         Deck deck1 = new Deck();
+        Deck deck2 = new Deck();
         deck1.shuffleCard();
+        // Testing shuffleCard() in Deck.java
+        boolean deskShuffleCardResult = deck1 == deck2;
+        System.out.println("deck1 == deck2? Expect FALSE: " + deskShuffleCardResult);
         Hand hand1 = new Hand();
         Hand hand2 = new Hand();
 
-        for (int i = 0; i < 5; i++) {
+        // Testing addCard() in Hand.java
+        // Testing removeCard() in Deck.java
+        for (int i = 0; i < NUMBER_OF_CARDS_IN_HAND; i++) {
             Card temp1 = deck1.removeCard();
             hand1.addCard(temp1);
             Card temp2 = deck1.removeCard();
             hand2.addCard(temp2);
         }
 
-        hand1.sortCard();
-        hand2.sortCard();
-        deck1.sortCard();
 
-        System.out.println("\n===Sorted card in hand1===");
+        System.out.println("\n===Cards in hand1===");
+        // Testing toString() in Hand.java
         hand1.toString();
-        System.out.println("\n===Sorted card in hand2===");
+
+        System.out.println("\n===Shuffled Cards in hand1===");
+        // Testing shuffleCard() in Hand.java
+        // This output should be different from the previous output.
+        hand1.shuffleCard();
+        hand1.toString();
+
+        System.out.println("\n===Sorted cards in hand2===");
+        // Testing sortCard() in Hand.java
+        hand2.sortCard();
         hand2.toString();
-        System.out.println("\n===Sorted card in deck1===");
+
+        System.out.println("\n===Sorted cards in deck1===");
+        // Testing sortCard() in Deck.java
+        deck1.sortCard();
+        // Testing toString() in Deck.java
         deck1.toString();
+
         System.out.println("\n===Size should be 42 (= 52 - 5 - 5)===");
+        // Testing getDeck() in Deck.java
         System.out.println(deck1.getDeck().size());
 
 
         System.out.println("\n\n===Return the cards===");
 
+        // Testing addCard() in Deck.java
+        // Testing removeCard() in Hand.java
         for (int i = 0; i < NUMBER_OF_CARDS_IN_HAND; i++) {
             Card temp1 = hand1.removeCard();
             deck1.addCard(temp1);
