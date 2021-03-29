@@ -95,8 +95,8 @@ public class Hand extends Deck {
         Deck deck2 = new Deck();
         deck1.shuffleCard();
         // Testing shuffleCard() in Deck.java
-        boolean deskShuffleCardResult = deck1 == deck2;
-        System.out.println("deck1 == deck2? Expect FALSE: " + deskShuffleCardResult);
+        boolean deskShuffleCard = deck1 == deck2;
+        System.out.println("Check deck1 == deck2?? Expect FALSE: " + deskShuffleCard);
         Hand hand1 = new Hand();
         Hand hand2 = new Hand();
 
@@ -105,7 +105,13 @@ public class Hand extends Deck {
         for (int i = 0; i < NUMBER_OF_CARDS_IN_HAND; i++) {
             Card temp1 = deck1.removeCard();
             hand1.addCard(temp1);
+            boolean handAddCard = temp1 == hand1.hand.get(i);
+            System.out.println("Check addCard() adds?? Expect TRUE: " + handAddCard);
+
+            Card cardToBeRemoved = deck1.getDeck().get(0);
             Card temp2 = deck1.removeCard();
+            boolean deckRemoveCard = cardToBeRemoved == temp2;
+            System.out.println("Check removeCard() removes?? Expect TRUE: " + deckRemoveCard);
             hand2.addCard(temp2);
         }
 
@@ -141,10 +147,18 @@ public class Hand extends Deck {
         // Testing addCard() in Deck.java
         // Testing removeCard() in Hand.java
         for (int i = 0; i < NUMBER_OF_CARDS_IN_HAND; i++) {
+            Card cardToBeRemoved = hand1.hand.get(0);
             Card temp1 = hand1.removeCard();
             deck1.addCard(temp1);
+            boolean handRemoveCard = cardToBeRemoved == temp1;
+            System.out.println("Check removeCard() removes?? Expect TRUE: " + handRemoveCard);
+
             Card temp2 = hand2.removeCard();
             deck1.addCard(temp2);
+            // 41 is the last index in deck1 before returning the cards.
+            // To add to the correct index, use 2 times i+1.
+            boolean deckAddCard = temp2 == deck1.getDeck().get(41 + 2*(i+1));
+            System.out.println("Check addCard() adds?? Expect TRUE: " + deckAddCard);
         }
 
         System.out.println("\n===Sorted card in hand1 (expecting empty)===");
