@@ -144,7 +144,7 @@ public class BlackJack {
                 InAndOut.displayPlayerScore(game);
             } else {
                 playerStand = true;
-                System.out.println("Player choose to stand");
+                System.out.println("Player chose to stand");
             }
             // check if the player has busted
             if (isBusted(countScoreOfHand(game.playerHand.hand))) {
@@ -174,7 +174,7 @@ public class BlackJack {
                 InAndOut.displayDealerScore(game);
                 System.out.println("\n*** Dealer busted! Player won! Game over! ***");
             } else {
-                System.out.println("\nDealer choose to stand\n");
+                System.out.println("\nDealer chose to stand\n");
                 // Compare the score
                 System.out.println("*** Final Score ***");
                 int scoreOfPlayer = countScoreOfHand(game.playerHand.hand);
