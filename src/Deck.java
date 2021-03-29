@@ -4,7 +4,7 @@ import java.util.Collections;
 /**
  * @program: Deck
  * @description: This class represent the deck that consists of 52 cards
- * @author: Siyu Hou, Kicho Yu
+ * @author: Siyu Hou, Kicho Yu, Chance Lamberth, Shuwei Wang
  * @create: 2021-03-16 23:39
  **/
 public class Deck {

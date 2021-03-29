@@ -4,7 +4,7 @@ import java.util.Collections;
 /**
  * @program: Hand
  * @description: This is a class representing the cards in a hand
- * @author: Siyu Hou, Kicho Yu
+ * @author: Siyu Hou, Kicho Yu, Chance Lamberth, Shuwei Wang
  * @create: 2021-03-16 23:44
  **/
 public class Hand extends Deck {

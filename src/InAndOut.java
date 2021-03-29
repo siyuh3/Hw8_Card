@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * @program: BlackJack
  * @description: This class represent the input and output
- * @author: Siyu Hou, Kicho Yu
+ * @author: Siyu Hou, Kicho Yu, Chance Lamberth, Shuwei Wang
  * @create: 2021-03-16 23:39
  **/
 public class InAndOut {
