@@ -16,8 +16,8 @@ public class Deck {
      */
     public Deck() {
         int numberOfSuits = 4;
+        int numberOfCardsInASuit = 13;
         for (int i = 1; i <= numberOfSuits; i++) {
-            int numberOfCardsInASuit = 13;
             for (int j = 1; j <= numberOfCardsInASuit; j++) {
                 Card newCard = new Card(i, j);
                 deck.add(newCard);
