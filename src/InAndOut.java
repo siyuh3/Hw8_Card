@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * @program: BlackJack
+ * @program: InAndOut
  * @description: This class represent the input and output
  * @author: Siyu Hou, Kicho Yu, Chance Lamberth, Shuwei Wang
  * @create: 2021-03-16 23:39

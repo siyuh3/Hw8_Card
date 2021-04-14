@@ -2,7 +2,7 @@ import java.util.ArrayList;
 /**
  * @program: BlackJack
  * @description: This class represent BlackJack game
- * @author: Siyu Hou, Kicho Yu
+ * @author: Siyu Hou, Kicho Yu, Chance Lamberth, Shuwei Wang
  * @create: 2021-03-16 23:39
  **/
 public class BlackJack {

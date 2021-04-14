@@ -128,8 +128,7 @@ public class Card {
             case 3 -> unicode = "\u2662";
             case 4 -> unicode = "\u2663";
             default -> throw new IllegalStateException("Invalid suit: " + suit);
-        }
-        ;
+        };
 
         unicode += " \uD83C";
         return switch (name) {
