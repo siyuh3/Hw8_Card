@@ -1,5 +1,3 @@
-import java.io.PrintStream;
-
 /**
  * @program: Card
  * @description: This class represents the card that stores the
